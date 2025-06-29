@@ -1,3 +1,62 @@
-.wrapper {
+.parentWrapper {
   display: flex;
+  align-items: center;
+}
+
+.toggleLabel {
+  padding-right: 5px;
+}
+
+.sliderWrapper {
+  display: flex;
+}
+
+.handle {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  top: -5px;
+  left: -5px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.notch {
+  cursor: pointer;
+  position: relative;
+  width: 35px;
+  height: 15px;
+  background: var(--props-inactive-toggle-color);
+  display: block;
+  border-radius: 100px;
+}
+
+.notch::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: var(--props-toggle-handle-color);
+  border-radius: 50%;
+  transition: 0.3s;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/*styles for Notch when Handle has focus-visble=true */
+.handle:focus-visible + .notch {
+  -webkit-box-shadow: inset 0px 0px 0px 2px var(--props-focus-ring-color);
+  -moz-box-shadow: inset 0px 0px 0px 2px var(--props-focus-ring-color);
+  box-shadow: inset 0px 0px 0px 2px var(--props-focus-ring-color);
+}
+
+.handle:checked + .notch {
+  background: var(--props-active-toggle-color);
+}
+
+.handle:checked + .notch::after {
+  left: calc(100% - 15px);
 }

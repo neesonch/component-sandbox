@@ -1,0 +1,11 @@
+:root {
+  --props-default-background-color: #0d0d0f;
+  --props-default-font-color: #fff;
+  --props-disabled-font-color: #686868;
+  --props-focus-ring-color: #ff00ff;
+  --props-select-background-color: #101012;
+  --props-inactive-toggle-color: #e4e5df;
+  --props-active-toggle-color: #6096fa;
+  --props-toggle-handle-color: #fff;
+  --props-vertical-card-background: #292e31;
+}
